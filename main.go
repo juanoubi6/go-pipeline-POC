@@ -39,7 +39,7 @@ func main() {
 	println("Number of gorutines executing: " + strconv.Itoa(runtime.NumGoroutine()))
 }
 
-func worker(receiveCh <- chan int, sendCh chan <- int, id int) {
+func worker(receiveCh <-chan int, sendCh chan<- int, id int) {
 	defer wgGorutines.Done()
 
 	// Consume from the receive channel. If there is no element in it, block until someone publishes something.
